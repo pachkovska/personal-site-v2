@@ -6,12 +6,12 @@
     min-height: 100vw;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: all .2s ease-in-out;
+    justify-content: flex-end;
+    transition: all .5s ease-in-out;
 }
 
 .NavBar-icon {
-    margin: 2px;
+    margin: 5px;
     width: 40px;
   }
   
@@ -27,14 +27,17 @@
     transition: all .2s ease-in-out;
   }
 
+  .NavBar-vertical:hover .NavBar-icon:before,
   .NavBar-icon:hover:before {
     transform: translateY(12px) rotate(135deg);
   }
   
+  .NavBar-vertical:hover .NavBar-icon:after,
   .NavBar-icon:hover:after {
     transform: translateY(-12px) rotate(-135deg);
   }
-  
+
+  .NavBar-vertical:hover .NavBar-icon div,
   .NavBar-icon:hover div {
     transform: scale(0);
   }
