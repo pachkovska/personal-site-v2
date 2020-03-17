@@ -1,12 +1,14 @@
 import React from 'react';
 import './NavBar.css';
-import menu from '../images/menu.svg';
+import close from '../images/close.svg';
 
 const NavBar = () => {
   return (
     <div className="NavBar">
         <div className="NavBar-vertical">
-            <img src={menu} alt="Hamburger menu" />
+            <div class="NavBar-icon">
+                <div></div>
+            </div>
         </div>
     </div>
   );
