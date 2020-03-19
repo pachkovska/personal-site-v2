@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
+import debounce from 'lodash/debounce';
 import './App.css';
 
 import NavBar from './components/NavBar.js';
 
-const App = () => {
+class App extends Component {
+
+  state = {
+  }
+
+  render(){
   return (
     <div className="App">
-      <NavBar />
+      <NavBar 
+      />
     </div>
-  );
+  )};
 }
 
 export default App;
