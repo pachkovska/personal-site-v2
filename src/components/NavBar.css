@@ -1,9 +1,9 @@
 .NavBar-vertical {
-    position: sticky;
+    /*position: sticky;*/
     right: 0px;
     background-color: #000000;
     width: 50px;
-    min-height: 100vw;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
