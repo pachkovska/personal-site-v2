@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './NavBar.css';
 
-class NavBar extends Component {
-    render (){
+function NavBar ({active, addActiveClass}) {
     return (
         <div className="NavBar">
             <div className="NavBar-vertical">
                 <div className="NavBar-menu">
-                    <div className={`NavBar-menu-item ${this.props.active === "home"? 'active': ''}`} id="home" onClick={this.props.addActiveClass}>Home</div>
-                    <div className={`NavBar-menu-item ${this.props.active === "portfolio"? 'active': ''}`} id="portfolio" onClick={this.props.addActiveClass}>Portfolio</div>
-                    <div className={`NavBar-menu-item ${this.props.active === "resume"? 'active': ''}`} id="resume" onClick={this.props.addActiveClass}>Resume</div>
-                    <div className={`NavBar-menu-item ${this.props.active === "contact"? 'active': ''}`} id="contact" onClick={this.props.addActiveClass}>Contact</div>
+                    <div className={`NavBar-menu-item ${active === "home"? 'active': ''}`} id="home" onClick={addActiveClass}>Home</div>
+                    <div className={`NavBar-menu-item ${active === "portfolio"? 'active': ''}`} id="portfolio" onClick={addActiveClass}>Portfolio</div>
+                    <div className={`NavBar-menu-item ${active === "resume"? 'active': ''}`} id="resume" onClick={addActiveClass}>Resume</div>
+                    <div className={`NavBar-menu-item ${active === "contact"? 'active': ''}`} id="contact" onClick={addActiveClass}>Contact</div>
                 </div>
                 <div className="NavBar-icon">
                     <div></div>
                 </div>
             </div>
         </div>
-  )};
+  )
 }
 
 export default NavBar;

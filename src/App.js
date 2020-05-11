@@ -1,33 +1,28 @@
-import React, { Component } from 'react';
-import debounce from 'lodash/debounce';
+import React, {useState} from 'react';
 import './App.css';
 
 import NavBar from './components/NavBar.js';
 
-class App extends Component {
+function App () {
 
-  state = {
-    active: '',
-  }
+    const [activeNav, setActiveNav] = useState('');
 
-  addActiveClass = (e) => {
-    const clicked = e.target.id
-    if(this.state.active === clicked) { 
-        this.setState({active: ''});
-    } else {
-        this.setState({active: clicked})
-   }
-}
-
-  render(){
+      const addActiveClass = (e) => {
+        const clicked = e.target.id;
+        if(activeNav === clicked) {
+            setActiveNav('');
+        } else {
+            setActiveNav(clicked);
+       }
+    };
   return (
     <div className="App">
       <NavBar
-        active={this.state.active} 
-        addActiveClass={this.addActiveClass}
+        active={activeNav}
+        addActiveClass={addActiveClass}
       />
     </div>
-  )};
+  )
 }
 
 export default App;
