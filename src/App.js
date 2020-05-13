@@ -1,26 +1,19 @@
 import React, {useState} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import NavBar from './components/NavBar/NavBar.js';
+import Contact from "./components/pages/Contact/Contact";
+import {Route, Switch} from "react-router-dom";
 
-import NavBar from './components/NavBar.js';
 
 function App () {
 
-    const [activeNav, setActiveNav] = useState('');
-
-      const addActiveClass = (e) => {
-        const clicked = e.target.id;
-        if(activeNav === clicked) {
-            setActiveNav('');
-        } else {
-            setActiveNav(clicked);
-       }
-    };
   return (
     <div className="App">
-      <NavBar
-        active={activeNav}
-        addActiveClass={addActiveClass}
-      />
+        <NavBar/>
+        <Switch>
+            <Route exact path='/contact' component={Contact} />
+        </Switch>
     </div>
   )
 }

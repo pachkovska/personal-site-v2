@@ -1,11 +1,13 @@
 :root{
   --light-grey: #D3D3D3;
+  --navbar-width: 250px;
 }
 
 .App {
   display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
+  flex-direction: row-reverse;
+  /*flex-wrap: wrap;*/
+  /*justify-content: space-between;*/
 }
 
 
