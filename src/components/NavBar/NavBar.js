@@ -7,10 +7,10 @@ function NavBar () {
         <div className="NavBar">
             <div className="NavBar-vertical">
                     <div className="NavBar-menu">
-                        <Link className={`NavBar-menu-item`} id="home" to="/" >Home</Link>
-                        <Link className={`NavBar-menu-item`} id="portfolio" to="/portfolio">Portfolio</Link>
-                        <Link className={`NavBar-menu-item`} id="resume" to="/resume">Resume</Link>
-                        <Link className={`NavBar-menu-item`} id="contact" to="/contact">Contact</Link>
+                        <Link className={`NavBar-menu-item`}  to="/" >Home</Link>
+                        <Link className={`NavBar-menu-item`}  to="/portfolio">Portfolio</Link>
+                        <Link className={`NavBar-menu-item`}  to="/resume">Resume</Link>
+                        <Link className={`NavBar-menu-item`}  to="/contact">Contact</Link>
                     </div>
                     <div className="NavBar-icon">
                         <div></div>
