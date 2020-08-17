@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from './components/NavBar/NavBar.js';
 import Contact from "./components/pages/Contact/Contact";
-import {Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import Home from "./components/pages/Home/Home";
 
 
 function App () {
@@ -13,6 +14,7 @@ function App () {
         <NavBar/>
         <Switch>
             <Route exact path='/contact' component={Contact} />
+            <Route exact path='/' component={Home} />
         </Switch>
     </div>
   )
