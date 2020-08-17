@@ -8,7 +8,7 @@ function NavBar () {
             <div className="NavBar-vertical">
                     <div className="NavBar-menu">
                         <Link className={`NavBar-menu-item`}  to="/" >Home</Link>
-                        <Link className={`NavBar-menu-item`}  to="/portfolio">Portfolio</Link>
+                        <Link className={`NavBar-menu-item`}  to="/projects">Projects</Link>
                         <Link className={`NavBar-menu-item`}  to="/resume">Resume</Link>
                         <Link className={`NavBar-menu-item`}  to="/contact">Contact</Link>
                     </div>
