@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { Button, Form, FormGroup, Input} from 'reactstrap';
-import './Contact.css';
 import ContactImage from '../../../images/contact-page-img.jpg';
 
-const Contact = () => {
+export default function Contact() {
     const [messageBody, setMessageBody] = useState({});
 
     const onFormChange = ev => {
@@ -20,13 +19,12 @@ const Contact = () => {
 
     function sendEmail() {
         emailjs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, templateParams, process.env.REACT_APP_EMAILJS_USER_ID)
-            .then((result) => {
-
+            .then(() => {
                 setMessageBody({});
-                console.log(result.text);
             }, (error) => {
-                console.log(error.text);
+                console.log(error);
             });
+        console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, templateParams, process.env.REACT_APP_EMAILJS_USER_ID)
     }
 
     return (
@@ -55,4 +53,3 @@ const Contact = () => {
     );
 }
 
-export default Contact;

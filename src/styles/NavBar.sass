@@ -1,0 +1,92 @@
+$nav-primary-color: #131A22
+$nav-secondary-color: #FAFAFA
+
+.NavBar
+  float: right
+  position: relative
+  z-index: 10
+  margin-bottom: 0
+
+.NavBar-vertical
+  background-color: $nav-primary-color
+  width: 50px
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: calc(100vh - 105px) 1fr
+  align-items: center
+  justify-content: end
+  transition: all .5s ease-in-out
+
+
+.NavBar-icon
+  margin: 5px
+  width: 40px
+  display: block
+  grid-column: 2
+  justify-self: end
+
+  &:after, &:before, div
+    background-color: $nav-secondary-color
+    border-radius: 3px
+    content: ''
+    display: block
+    height: 5px
+    margin: 7px 0
+    transition: all .2s ease-in-out
+
+.NavBar-vertical:hover .NavBar-icon:before, .NavBar-icon:hover:before
+  transform: translateY(12px) rotate(135deg)
+
+.NavBar-vertical:hover .NavBar-icon:after, .NavBar-icon:hover:after
+  transform: translateY(-12px) rotate(-135deg)
+
+.NavBar-vertical:hover .NavBar-icon div, .NavBar-icon:hover div
+  transform: scale(0)
+
+.NavBar-vertical:hover
+  width: 300px
+  transition: all .5s ease-in-out
+
+.NavBar-menu
+  color: $nav-secondary-color
+  grid-column: 1
+  justify-self: start
+  opacity: 0
+  font-size: 22px
+  display: flex
+  flex-direction: column
+
+.NavBar-vertical:hover .NavBar-menu
+  opacity: 1
+  transition: all 1.2s ease-in-out
+
+.NavBar-menu-item
+  margin: 20px 20px auto 30px
+  color: $nav-secondary-color
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+    color: $nav-secondary-color
+
+/*possibly add onclick events to handle menu on mobile screens
+/*@media only screen and (max-width: 600px) {
+/*    .NavBar-vertical {
+/*        width: 250px;
+/*        transition: all .5s ease-in-out;
+/*    }
+/*}
+
+.social
+  float: bottom
+  display: flex
+  flex-direction: column
+  justify-self: end
+  align-self: end
+  grid-column: 2
+  padding: 0
+  margin: 3px
+
+.icon
+  padding: 0
+  color: $nav-secondary-color
