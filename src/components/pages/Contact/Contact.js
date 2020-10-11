@@ -1,49 +1,37 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
 import { Button, Form, FormGroup, Input} from 'reactstrap';
 import ContactImage from '../../../images/contact-page-img.jpg';
 
 export default function Contact() {
-    const [messageBody, setMessageBody] = useState({});
+    const formRef = useRef();
 
-    const onFormChange = ev => {
-        ev.preventDefault();
-        setMessageBody({...messageBody, [ev.target.name]: ev.target.value});
-    }
-
-    const templateParams = {
-        "name": messageBody.name,
-        "from_email": messageBody.email,
-        "message_html": messageBody.message,
-    }
-
-    function sendEmail() {
-        emailjs.send(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, templateParams, process.env.REACT_APP_EMAILJS_USER_ID)
+    const onFormSend = ev => {
+        emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, ev.target, process.env.REACT_APP_EMAILJS_USER_ID)
             .then(() => {
-                setMessageBody({});
+                formRef.current.reset();
             }, (error) => {
                 console.log(error);
             });
-        console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, templateParams, process.env.REACT_APP_EMAILJS_USER_ID)
     }
 
     return (
         <div className="contact-page">
             <img className="contact-image" src={ContactImage} alt="Contact Me"/>
 
-            <Form className="contact-form" onSubmit={sendEmail}>
+            <Form className="contact-form" innerRef={formRef}  onSubmit={onFormSend}>
                 <p className="form-title">Drop me a line:</p>
 
                 <FormGroup>
-                    <Input type="text" bsSize="md" name="name" id="contactName" placeholder="Your name" onChange={onFormChange} value={messageBody.name || ''} />
+                    <Input type="text" bsSize="md" name="name" id="contactName" placeholder="Your name" />
                 </FormGroup>
 
                 <FormGroup>
-                    <Input type="email" bsSize="md" name="email" id="contactEmail" placeholder="Your contact email" onChange={onFormChange} value={messageBody.email || ''} />
+                    <Input type="email" bsSize="md" name="email" id="contactEmail" placeholder="Your contact email" />
                 </FormGroup>
 
                 <FormGroup>
-                    <Input type="textarea" bsSize="md" name="message" id="message" placeholder="Message" onChange={onFormChange} value={messageBody.message || ''} />
+                    <Input type="textarea" bsSize="md" name="message" id="message" placeholder="Message" />
                 </FormGroup>
 
                 <Button type="submit">Send</Button>
