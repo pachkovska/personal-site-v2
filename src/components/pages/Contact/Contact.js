@@ -7,7 +7,10 @@ export default function Contact() {
     const formRef = useRef();
 
     const onFormSend = ev => {
-        emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, ev.target, process.env.REACT_APP_EMAILJS_USER_ID)
+        emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                         ev.target,
+                         process.env.REACT_APP_EMAILJS_USER_ID)
             .then(() => {
                 formRef.current.reset();
             }, (error) => {
@@ -22,19 +25,19 @@ export default function Contact() {
             <Form className="contact-form" innerRef={formRef}  onSubmit={onFormSend}>
                 <p className="form-title">Drop me a line:</p>
 
-                <FormGroup>
-                    <Input type="text" bsSize="md" name="name" id="contactName" placeholder="Your name" />
+                <FormGroup className="contact-form--item">
+                    <Input type="text" bsSize="md" name="name" placeholder="Your name" />
                 </FormGroup>
 
-                <FormGroup>
-                    <Input type="email" bsSize="md" name="email" id="contactEmail" placeholder="Your contact email" />
+                <FormGroup className="contact-form--item">
+                    <Input type="email" bsSize="md" name="email" placeholder="Your contact email" />
                 </FormGroup>
 
-                <FormGroup>
+                <FormGroup className="contact-form--item">
                     <Input type="textarea" bsSize="md" name="message" id="message" placeholder="Message" />
                 </FormGroup>
 
-                <Button type="submit">Send</Button>
+                <Button className="btn-send" type="submit">Send</Button>
             </Form>
 
         </div>

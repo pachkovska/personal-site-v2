@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.sass';
 import NavBar from './components/NavBar/NavBar.js';
 import Contact from './components/pages/Contact/Contact';
+import Resume from './components/pages/Resume/Resume';
 import { Route, Switch } from "react-router-dom";
 import Home from "./components/pages/Home/Home";
 
@@ -15,6 +16,7 @@ export default function App() {
         <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/contact' component={Contact} />
+            <Route exact path='/resume' component={Resume} />
         </Switch>
     </div>
   )
