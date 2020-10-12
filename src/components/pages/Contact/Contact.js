@@ -13,7 +13,7 @@ export default function Contact() {
                          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
                          ev.target,
                          process.env.REACT_APP_EMAILJS_USER_ID)
-            .then((res) => {
+            .then(() => {
                 formRef.current.reset();
             }, (error) => {
                 console.log(error);

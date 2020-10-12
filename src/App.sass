@@ -11,15 +11,25 @@ body
 
 .App
   display: grid
-  grid-template-columns: 1fr 220px 50px
-  grid-template-rows: 1fr
-  height: 100%
-  width: 100%
+  grid-template-columns: 1fr 200px 50px
+  grid-template-rows: auto
+  height: max-content
+  //overflow-y: scroll
+
+  //grid-auto-rows: min-content
+  //width: 100%
+  //height: 100%
+
+  //&:after
+  //  clear: both
+  //  content: ""
+  //  display: table
 
 
 .grid-left
   grid-column: 1 / span 2
   grid-row: 1
+  height: max-content
 
 .grid-right
   grid-column: 3 / span 2

@@ -42,7 +42,7 @@ export default function Resume() {
                     <h5 className="mb-4">TECH STACK:</h5>
                     <div className="resume-stack-list">
                         {stack.map( el =>
-                            <div className="resume-stack-list--item">
+                            <div className="resume-stack-list--item" key={el.tech}>
                                 <img className="resume-icon" src={el.icon} alt={el.tech} />
                                 <div>{el.tech}</div>
                             </div>
@@ -66,12 +66,12 @@ export default function Resume() {
                         <div className="resume-company--experience">
                             Develop complete funcitonality using MERN stack for users to solve coding challeneges within the platform, which included
                             building front-end, back-end as well as code validating microservice.
-                            Front-end utilized UmiJS react based enterprise-level framework combined with redux saga for state management.
+                            Front-end utilizes UmiJS react based enterprise-level framework combined with redux saga for state management.
                             Microservice is an Express.js based REST API server that utilizes dockerode (Node.js wrapper library for Docker Engine API)
                             for container creation upon request. Such architecture allowed to decrease student's code validation time thanks to every
                             challenge solution being tested in its own docker container.
                             Implementation of this microservice further allowed the company to develop additional features allowing students
-                            to create challenges themselves, which resulted in increased user engagement.
+                            to create challenges themselves, which resulted in an increased user engagement.
                         </div>
                         <div className="resume-company">
                             Skupos - Software Engineer (QA)
