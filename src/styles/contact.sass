@@ -4,19 +4,18 @@
   display: flex
   flex-direction: column
   align-items: center
-  z-index: -1
 
 .contact-image
   position: fixed
-  float: left
+  //float: left
   left: 0
   width: 100%
   height: 250px
   margin-top: 0
+  z-index: -10
 
 .contact-form
   margin: calc(100vh - 450px) auto
-  z-index: 1
 
 .contact-form--item
   width: 450px
@@ -25,9 +24,6 @@
 .btn-send
   background-color: #474761
   width: 100px
-
-  &:hover
-
 
 #message
   height: 150px
