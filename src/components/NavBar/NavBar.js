@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
 
-function NavBar () {
+export default function NavBar() {
     return (
-        <div className="NavBar">
+        <div className="NavBar grid-right">
             <div className="NavBar-vertical">
                     <div className="NavBar-menu">
                         <Link className={`NavBar-menu-item`}  to="/" >Home</Link>
@@ -27,5 +26,3 @@ function NavBar () {
         </div>
   )
 }
-
-export default NavBar;

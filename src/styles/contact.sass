@@ -1,0 +1,43 @@
+.contact-page
+  width: 100%
+  position: absolute
+  display: flex
+  flex-direction: column
+  align-items: center
+  z-index: -1
+
+.contact-image
+  position: fixed
+  float: left
+  left: 0
+  width: 100%
+  height: 250px
+  margin-top: 0
+
+.contact-form
+  margin: calc(100vh - 450px) auto
+  z-index: 1
+
+.contact-form--item
+  width: 450px
+  margin-bottom: 1rem
+
+.btn-send
+  background-color: #474761
+  width: 100px
+
+  &:hover
+
+
+#message
+  height: 150px
+
+@media only screen and (max-width: 600px)
+  .contact-form
+    margin: 5vh 5vw 5vh 5vh
+
+    &.contact-form--item
+      width: 70vw
+
+  .contact-image
+    height: 30vh

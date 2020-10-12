@@ -1,23 +1,23 @@
-import React, {useState} from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './App.sass';
 import NavBar from './components/NavBar/NavBar.js';
-import Contact from "./components/pages/Contact/Contact";
+import Contact from './components/pages/Contact/Contact';
+import Resume from './components/pages/Resume/Resume';
 import { Route, Switch } from "react-router-dom";
 import Home from "./components/pages/Home/Home";
 
 
-function App () {
+export default function App() {
 
   return (
     <div className="App">
-        <NavBar/>
+        <NavBar />
         <Switch>
-            <Route exact path='/contact' component={Contact} />
             <Route exact path='/' component={Home} />
+            <Route exact path='/contact' component={Contact} />
+            <Route exact path='/resume' component={Resume} />
         </Switch>
     </div>
   )
 }
-
-export default App;

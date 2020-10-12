@@ -1,0 +1,33 @@
+@import 'styles/contact'
+@import 'styles/navBar'
+@import 'styles/home'
+@import 'styles/resume'
+
+root
+  --primary-color: #131A22
+body
+  font-family: 'Raleway', sans-serif
+  font-size: 1rem
+
+.App
+  display: grid
+  grid-template-columns: 1fr 220px 50px
+  grid-template-rows: 1fr
+  height: auto
+
+.grid-left
+  grid-column: 1 / span 2
+  grid-row: 1
+  z-index: -1
+
+.grid-right
+  grid-column: 3 / span 2
+  grid-row: 1
+  z-index: 1
+
+
+
+
+
+
+
