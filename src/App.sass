@@ -12,8 +12,7 @@ body
 .App
   display: grid
   grid-template-columns: 1fr 200px 50px
-  grid-template-rows: auto
-  height: max-content
+  //grid-template-rows: minmax(max-content, 1000px)
   //overflow-y: scroll
 
   //grid-auto-rows: min-content
@@ -29,12 +28,13 @@ body
 .grid-left
   grid-column: 1 / span 2
   grid-row: 1
-  height: max-content
+  margin-bottom: 0
 
 .grid-right
   grid-column: 3 / span 2
   grid-row: 1
   z-index: 1
+  margin-bottom: 0
 
 
 

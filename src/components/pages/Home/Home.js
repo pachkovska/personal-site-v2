@@ -1,7 +1,18 @@
-import React from 'react';
-import GitHubCalendar from 'react-github-calendar';
+import React, { useEffect, useState } from 'react';
+import getContributions from '../../../helpers/getContributions';
 
 export default function Home() {
+
+    const [contributions, setContributions] = useState([])
+
+    useEffect(() => {
+        let githubData;
+        (async function () {
+            githubData = await getContributions(process.env.REACT_APP_GITHUB_TOKEN, process.env.REACT_APP_GITHUB_USERNAME);
+            setContributions(githubData.data.user.contributionsCollection.contributionCalendar.weeks);
+        })();
+    },[])
+
     return (
         <div  className="home grid-left">
             <div className="main">
@@ -16,7 +27,7 @@ export default function Home() {
                     color information to the component to utilize it in their apps - npm butterfly chart.
                 </div>
                 <div className="card--style">
-                    <GitHubCalendar username="pachkovska"/>
+                    <div>Githuh Calendar placeholder</div>
                 </div>
             </div>
         </div>
