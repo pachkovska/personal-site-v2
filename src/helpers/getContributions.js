@@ -11,6 +11,7 @@ async function getContributions(token, username) {
                             contributionDays {
                             date
                             contributionCount
+                            contributionLevel
                             }
                         }
                     }

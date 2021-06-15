@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import getContributions from '../../../helpers/getContributions';
+import ContributionsCalendar from "../../ContributionsCalendar";
 
 export default function Home() {
 
@@ -28,6 +29,7 @@ export default function Home() {
                 </div>
                 <div className="card--style">
                     <div>Githuh Calendar placeholder</div>
+                    {/*<ContributionsCalendar contributions={contributions} />*/}
                 </div>
             </div>
         </div>
